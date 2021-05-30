@@ -1,0 +1,19 @@
+.sign-up-item {
+    border: 1px solid;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 200px;
+    position: relative;
+    #error-display-none-first-name,
+    #error-display-none-last-name,
+    #error-display-none-username,
+    #error-display-none-password,
+    #error-display-none-password-confirm {
+        display: none;
+        .error-text {
+            color: #ff0000;
+        }        
+    }
+
+}
