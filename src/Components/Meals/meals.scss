@@ -1,0 +1,30 @@
+.meals {
+    border: 1px solid;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 200px;
+    position: relative;
+    .meals-footer {
+        .meals-options {
+          justify-content: space-between;
+        }
+    }
+
+}
+.meal-options {
+  width:100%;  
+#newMealButton {
+    width: 100%;
+}
+}
+
+#error-meal-name,
+#error-meal-calories,
+#error-meal-date {
+    display: none;
+    .error-text {
+        color: red;
+    }
+
+}

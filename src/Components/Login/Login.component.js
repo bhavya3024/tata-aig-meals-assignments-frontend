@@ -5,6 +5,7 @@ import {
   Label,
   TextField,
   PrimaryButton,
+  Link,
 } from "@fluentui/react";
 import "./login.scss";
 import { toast } from 'react-hot-toast';
@@ -23,7 +24,6 @@ export default function Login({ loginDispatch, token, type, message }) {
          toast.error(message);
      }
      if (type === LOGIN_SUCCESS) {
-        window.localStorage.setItem('token', token);
         history.push('/meals');
      }
   });
@@ -135,6 +135,9 @@ export default function Login({ loginDispatch, token, type, message }) {
         >
           Login
         </PrimaryButton>
+      </StackItem>
+      <StackItem>
+          <Link href="/sign-up"><PrimaryButton id='signUpBtn'>SignUp</PrimaryButton></Link>
       </StackItem>
     </Stack>
   );

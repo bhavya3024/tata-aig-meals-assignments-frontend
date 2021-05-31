@@ -29,6 +29,7 @@ function* login({ payload }) {
         ...payload,
       }
     );
+    localStorage.setItem('token', data.token);
     yield put(loginSuccess(data));
   } catch (error) {
     yield put(loginError(error.response.data));

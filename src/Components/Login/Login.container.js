@@ -4,10 +4,9 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router'; 
 
 const mapStateToProps = (state) => {
-  const { UserReducer: { token, type, message } } = state;
+  const { UserReducer: {  type, message } } = state;
   return {
      ...state,
-     token,
      type,
      message,
   }
