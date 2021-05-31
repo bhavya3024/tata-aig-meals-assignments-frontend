@@ -78,7 +78,7 @@ export default function Login({ loginDispatch, token, type, message }) {
   };
   const onLogin = () => {
       const username = document.getElementById('login-username').value;
-      const password = jwt.sign(document.getElementById('login-password').value, 'p');
+      const password = jwt.sign(document.getElementById('login-password').value, process.env.REACT_APP_PASSWORD_SECRET);
       loginDispatch({
          username,
          password,

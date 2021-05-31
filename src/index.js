@@ -11,6 +11,11 @@ import { applyMiddleware, createStore } from "redux";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter } from "react-router-dom";
 import { mergeStyles, initializeIcons } from '@fluentui/react';
+import dotenv from 'dotenv';
+
+dotenv.config({
+  path: '../'
+});
 
 const sagas = createSagaMiddleware();
 const store = createStore(rootReducer, applyMiddleware(sagas));

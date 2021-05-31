@@ -9,9 +9,12 @@ import {
   loginError,
 } from "../redux/actions";
 
+const URL = process.env.REACT_APP_API_BASE_URL;
+
+
 function* signUp({ payload }) {
   try {
-    yield call(axios.post, "http://localhost:5000/users", {
+    yield call(axios.post, `${URL}/users`, {
       ...payload,
     });
     yield put(signUpSuccess());
@@ -24,7 +27,7 @@ function* login({ payload }) {
   try {
     const { data } = yield call(
       axios.post,
-      "http://localhost:5000/users/login",
+      `${URL}/users/login`,
       {
         ...payload,
       }

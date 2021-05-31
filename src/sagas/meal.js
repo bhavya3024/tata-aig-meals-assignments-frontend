@@ -15,9 +15,11 @@ import {
     deleteMealSuccess,
 } from "../redux/actions";
 
+const URL = process.env.REACT_APP_API_BASE_URL;
+
 function* createNewMeal({ payload }) {
   try {
-    yield call(axios.post, "http://localhost:5000/meals", {
+    yield call(axios.post, `${URL}/meals`, {
         name: payload.name,
         calories: payload.calories,
         scheduleTime: payload.date,
@@ -34,7 +36,7 @@ function* createNewMeal({ payload }) {
 
 function *getMeals({ payload}) {
     try {
-        const { data } = yield call(axios.get, 'http://localhost:5000/meals', {
+        const { data } = yield call(axios.get, `${URL}/meals`, {
             params: {
                 date: payload.date,
             },
@@ -50,7 +52,7 @@ function *getMeals({ payload}) {
 
 function *updateMeals({ payload }) {
     try {
-        yield call(axios.patch, `http://localhost:5000/meals/${payload.id}`, {
+        yield call(axios.patch, `${URL}/meals/${payload.id}`, {
             name: payload.name,
             calories: payload.calories,
             scheduleTime: payload.date,
@@ -67,7 +69,7 @@ function *updateMeals({ payload }) {
 
 function *deleteMeal({ payload }) {
     try {
-        yield call(axios.delete, `http://localhost:5000/meals/${payload.id}`, {
+        yield call(axios.delete, `${URL}/meals/${payload.id}`, {
             headers: {
                 Authorization: localStorage.getItem('token'),
             }
